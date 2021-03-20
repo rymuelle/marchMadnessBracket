@@ -75,9 +75,9 @@ class Bracket:
     def __str__(self):
          return pprint.pformat(self.rounds())
         
-    def round_winners(self):
+    def round_winners(self, kwargs={}):
         rounds = []
-        for i, cur_round in enumerate(self.rounds()):
+        for i, cur_round in enumerate(self.rounds(**kwargs)):
             if i == 0: continue
             round_winners = (np.array(cur_round).reshape(-1))
             round_winners
